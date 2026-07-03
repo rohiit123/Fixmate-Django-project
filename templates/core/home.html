@@ -6,37 +6,353 @@ Home | FixMate
 
 {% block content %}
 
-<section class="max-w-7xl mx-auto px-6 py-20">
+<!-- ================= HERO SECTION ================= -->
 
-    <div class="text-center">
+<section class="hero py-5">
 
-        <h1 class="text-6xl font-bold text-gray-800">
+    <div class="container">
 
-            Find Trusted
+        <div class="row align-items-center">
 
-            <span class="text-blue-600">
-                Home Service
-            </span>
+            <!-- Left Content -->
+            <div class="col-lg-6">
 
-            Professionals
+                <h1 class="display-3 fw-bold">
 
-        </h1>
+                    Find Trusted
 
-        <p class="mt-6 text-xl text-gray-500">
+                    <span class="text-primary">
+                        Home Service
+                    </span>
 
-            Book trusted electricians, plumbers, painters,
-            carpenters and more in just a few clicks.
+                    Professionals
+
+                </h1>
+
+                <p class="lead mt-4 text-muted">
+
+                    Book trusted plumbers, electricians,
+                    painters, carpenters and more within minutes.
+
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="#" class="btn btn-primary btn-lg px-4">
+
+                        Book Service
+
+                    </a>
+
+                    <a href="#" class="btn btn-outline-dark btn-lg px-4 ms-2">
+
+                        Become a Worker
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Right Image -->
+            <div class="col-lg-6 text-center mt-5 mt-lg-0">
+
+                <img
+                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900"
+                class="img-fluid rounded-4 shadow-lg"
+                alt="FixMate">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= POPULAR SERVICES ================= -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+
+                Popular Services
+
+            </h2>
+
+            <p class="text-muted">
+
+                Find experienced professionals for every home service.
+
+            </p>
+
+        </div>
+
+        <div class="row">
+
+            {% for service in services %}
+
+            <div class="col-md-6 col-lg-3 mb-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+
+                        {{ service.icon }}
+
+                    </div>
+
+                    <h4>
+
+                        {{ service.name }}
+
+                    </h4>
+
+                    <p>
+
+                        {{ service.description }}
+
+                    </p>
+
+                    <a href="#" class="btn btn-primary">
+
+                        Book Now
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <div class="col-12 text-center">
+
+                <h5>No Services Available</h5>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+
+                How FixMate Works
+
+            </h2>
+
+            <p class="text-muted">
+
+                Book any home service in just three simple steps.
+
+            </p>
+
+        </div>
+
+        <div class="row text-center">
+
+            <div class="col-md-4">
+
+                <div class="p-4">
+
+                    <div class="display-4">
+
+                        🔍
+
+                    </div>
+
+                    <h4 class="mt-3">
+
+                        Search
+
+                    </h4>
+
+                    <p>
+
+                        Search for the service you need.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="p-4">
+
+                    <div class="display-4">
+
+                        📅
+
+                    </div>
+
+                    <h4 class="mt-3">
+
+                        Book
+
+                    </h4>
+
+                    <p>
+
+                        Choose your preferred worker and schedule.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="p-4">
+
+                    <div class="display-4">
+
+                        ✅
+
+                    </div>
+
+                    <h4 class="mt-3">
+
+                        Get It Done
+
+                    </h4>
+
+                    <p>
+
+                        Sit back while our verified professionals help you.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3 text-center">
+
+                <h1 class="text-primary">
+
+                    ✔
+
+                </h1>
+
+                <h5>
+
+                    Verified Workers
+
+                </h5>
+
+            </div>
+
+            <div class="col-md-3 text-center">
+
+                <h1 class="text-primary">
+
+                    💰
+
+                </h1>
+
+                <h5>
+
+                    Affordable Pricing
+
+                </h5>
+
+            </div>
+
+            <div class="col-md-3 text-center">
+
+                <h1 class="text-primary">
+
+                    ⚡
+
+                </h1>
+
+                <h5>
+
+                    Quick Service
+
+                </h5>
+
+            </div>
+
+            <div class="col-md-3 text-center">
+
+                <h1 class="text-primary">
+
+                    ⭐
+
+                </h1>
+
+                <h5>
+
+                    Trusted Professionals
+
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="py-5 text-center">
+
+    <div class="container">
+
+        <h2 class="fw-bold">
+
+            Ready to Book Your First Service?
+
+        </h2>
+
+        <p class="text-muted mt-3">
+
+            Join thousands of happy customers using FixMate.
 
         </p>
 
-        <div class="mt-10">
+        <a href="#" class="btn btn-primary btn-lg mt-3">
 
-            <input
-                type="text"
-                placeholder="Search services..."
-                class="w-full md:w-2/3 p-4 border rounded-xl shadow">
+            Get Started
 
-        </div>
+        </a>
 
     </div>
 
