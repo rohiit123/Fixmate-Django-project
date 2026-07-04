@@ -1,14 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
 
     <div class="container">
 
-        <a class="navbar-brand fw-bold fs-3 text-primary" href="/">
-            🔧 FixMate
+        <a class="navbar-brand fw-bold" href="{% url 'home' %}">
+
+            FixMate
+
         </a>
 
-        <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
 
             <span class="navbar-toggler-icon"></span>
 
@@ -16,31 +16,63 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
 
-            <ul class="navbar-nav ms-auto align-items-lg-center">
+            <ul class="navbar-nav ms-auto align-items-center">
 
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Home</a>
-                </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
+                    <a class="nav-link" href="{% url 'home' %}">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Become a Worker</a>
-                </li>
+                        Home
 
-                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                    <a class="btn btn-outline-primary" href="#">
-                        Login
                     </a>
+
                 </li>
 
-                <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-                    <a class="btn btn-primary" href="#">
-                        Register
-                    </a>
-                </li>
+                {% if user.is_authenticated %}
+
+                    <li class="nav-item">
+
+                        <span class="nav-link">
+
+                            Hello, {{ user.first_name|default:user.username }}
+
+                        </span>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="btn btn-danger ms-2" href="{% url 'logout' %}">
+
+                            Logout
+
+                        </a>
+
+                    </li>
+
+                {% else %}
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="{% url 'login' %}">
+
+                            Login
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="btn btn-primary ms-2" href="{% url 'register' %}">
+
+                            Register
+
+                        </a>
+
+                    </li>
+
+                {% endif %}
 
             </ul>
 

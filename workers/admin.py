@@ -1,29 +1,25 @@
 from django.contrib import admin
-from .models import WorkerProfile
+from .models import Worker
 
 
-@admin.register(WorkerProfile)
-class WorkerProfileAdmin(admin.ModelAdmin):
+@admin.register(Worker)
+class WorkerAdmin(admin.ModelAdmin):
 
     list_display = (
         "user",
-        "city",
-        "hourly_rate",
-        "verified",
+        "service",
+        "experience",
+        "starting_price",
         "available",
-    )
-
-    list_filter = (
-        "verified",
-        "available",
-        "city",
     )
 
     search_fields = (
         "user__username",
-        "city",
+        "user__first_name",
+        "user__last_name",
     )
 
-    filter_horizontal = (
-        "services",
+    list_filter = (
+        "service",
+        "available",
     )
